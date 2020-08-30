@@ -1,0 +1,131 @@
+.dashboard {
+  grid-column: 1 / -1;
+
+  @media only screen and (min-width: $bp-xs) {
+    grid-column: 2 / span 4;
+  }
+}
+
+.followers {
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: $bp-lg) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__card {
+    padding: 2rem;
+    border-radius: 0.8rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__container {
+      display: grid;
+      grid-row-gap: 3rem;
+      margin-top: 3rem;
+
+      @media only screen and (min-width: $bp-md) {
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        grid-column-gap: 2rem;
+      }
+
+      @media only screen and (min-width: $bp-xl) {
+        grid-column-gap: 3rem;
+      }
+    }
+
+    &--facebook {
+      border-top: 5px solid $color-facebook;
+    }
+
+    &--instagram {
+      border-top: 5px solid;
+      border-image: linear-gradient($color-instagram) 1;
+    }
+
+    &--twitter {
+      border-top: 5px solid $color-twitter;
+    }
+
+    &--youtube {
+      border-top: 5px solid $color-youtube;
+    }
+  }
+
+  &__count {
+    text-align: center;
+
+    &-heading {
+      line-height: 1;
+      font-size: 6rem;
+    }
+
+    &-sub-heading {
+      font-size: 1.2rem;
+      color: $color-light-blue-3;
+      letter-spacing: 6px;
+    }
+
+    &-daily {
+      position: relative;
+      color: $color-lime-green;
+      font-weight: 700;
+      padding-left: 1.4rem;
+
+      &::before {
+        content: '';
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 0;
+        z-index: 2;
+        // border-bottom: 5px currentColor solid;
+        border-left: 5px transparent solid;
+        border-right: 5px transparent solid;
+        transform: translateY(-50%);
+      }
+    }
+
+    &-up::before {
+      border-bottom: 5px currentColor solid;
+    }
+
+    &-down::before {
+      border-top: 5px currentColor solid;
+    }
+  }
+}
+
+.social {
+  &__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $color-light-blue-3;
+  }
+
+  &__icon {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+}
+
+.toggle__theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: $color-light-blue-3;
+  font-weight: bold;
+}

@@ -1,0 +1,64 @@
+.overview {
+  @media only screen and (min-width: $bp-xs) {
+    grid-column: 2 / span 4;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 1rem;
+    border-radius: 8px;
+    padding: 3rem;
+
+    @media only screen and (min-width: $bp-md) {
+      padding: 2rem;
+    }
+
+    &__container {
+      grid-column: 2 / span 4;
+      display: grid;
+
+      @media only screen and (min-width: $bp-md) {
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        grid-column-gap: 2rem;
+      }
+
+      @media only screen and (min-width: $bp-xl) {
+        grid-column-gap: 3rem;
+      }
+    }
+
+    &__head {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 2;
+      color: $color-light-blue-3;
+    }
+
+    &__image {
+      grid-row: 1 / span 1;
+      grid-column: 4 / span 1;
+      justify-self: end;
+      object-fit: contain;
+    }
+
+    &__subhead {
+      grid-row: 2 / span 1;
+      grid-column: 1 / span 1;
+      font-size: 4rem;
+      line-height: 1;
+      color: $color-light-blue-4;
+
+      &-dark {
+        color: $color-white;
+      }
+    }
+
+    &__stats {
+      grid-row: 2 / span 1;
+      grid-column: 4 / span 1;
+      justify-self: end;
+      align-self: end;
+    }
+  }
+}
